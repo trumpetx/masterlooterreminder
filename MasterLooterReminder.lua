@@ -5,7 +5,7 @@ end
 local function sendOutput(msg)
 	if isGroupLeader() then
 		if IsInRaid() then
-  			SendChatMessage(msg, "RAID")
+			SendChatMessage(msg, "RAID")
 		elseif IsInGroup() then -- this shouldn't run, but here in case this expands to parties
 			SendChatMessage(msg, "PARTY")
 		end
@@ -17,7 +17,7 @@ local function isEnteringInstance()
 	if not mapforunit then
 		return true
 	end
-	local position = C_Map.GetPlayerMapPosition(mapforunit,"player")
+	local position = C_Map.GetPlayerMapPosition(mapforunit, "player")
 	if not position then
 		return true
 	end
@@ -36,8 +36,8 @@ local function isMasterLooter()
 end
 
 local function setLootMaster()
-	local playerName = UnitName("player");
-	SetLootMethod("master", playerName);
+	local playerName = UnitName("player")
+	SetLootMethod("master", playerName)
 	sendOutput("Setting Master Looter: <" .. playerName .. ">")
 end
 
@@ -49,25 +49,25 @@ end
 
 local EventFrame = CreateFrame("Frame", "EventFrame")
 EventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
-EventFrame:SetScript('OnEvent', handlePlayerEnteringWorld)
+EventFrame:SetScript("OnEvent", handlePlayerEnteringWorld)
 
 StaticPopupDialogs["MSTR_LOOT_REM_SET"] = {
-  text = "Would you like to turn Master Looter on?",
-  button1 = "Yes",
-  button2 = "No",
-  OnAccept = function()
+	text = "Would you like to turn Master Looter on?",
+	button1 = "Yes",
+	button2 = "No",
+	OnAccept = function()
 		setLootMaster()
-  end,
-  OnCancel = function (_,reason)
+	end,
+	OnCancel = function(_, reason)
 		if reason == "timeout" then
 			-- Try again?
 		elseif reason == "clicked" then
 			-- Cancel message?
 		else
 			-- ??
-		end;
-  end,
-  timeout = 30,
-  whileDead = true,
-  hideOnEscape = true,
+		end
+	end,
+	timeout = 30,
+	whileDead = true,
+	hideOnEscape = true
 }
