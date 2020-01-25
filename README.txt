@@ -1,0 +1,1 @@
+This very simple addon reminds raid leaders to switch to Master Looter when they enter a raid instance
