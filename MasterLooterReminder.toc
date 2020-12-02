@@ -1,6 +1,12 @@
-## Interface: 11303
+## Interface: 11306
 ## Notes: Reminds raid leaders to switch to Master Looter when they enter a raid instance
 ## Title: MasterLooterReminder
 ## Author: Crakel-Pagle US
-## Version: 1.0
+## Version: 1.1
+## X-Credits:
+## X-Category: Utilities
+## X-License: Apache-2.0
+## X-Localizations: enUS
+## X-Curse-Project-ID: 360007
+## X-WoWI-ID: 25497
 MasterLooterReminder.lua

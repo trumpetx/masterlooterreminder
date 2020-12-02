@@ -1,2 +1,4 @@
 1.0:
 	* Basic addon functionality: popup when entering a raid instance asking to turn on Master Looter
+1.1:
+  * Bumping client version for Phase 6
